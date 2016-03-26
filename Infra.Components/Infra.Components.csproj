@@ -39,7 +39,9 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OutputDevices\IMonochromeOledDisplay.cs" />
     <Compile Include="OutputDevices\Led.cs" />
+    <Compile Include="OutputDevices\MonochromeOledDisplay.cs" />
     <Compile Include="Platform\Common\DeviceState.cs" />
     <Compile Include="Platform\Common\DeviceStateExtensions.cs" />
     <Compile Include="Platform\Gpio\GpioPinDriveMode.cs" />
