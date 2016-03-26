@@ -1,7 +1,7 @@
 ﻿using Infra.Components.Platform.Gpio;
 using System;
 
-namespace Infra.Components.Platform.IoT.Extensions.Gpio
+namespace Infra.Components.Platform.IoT.Platform.Gpio
 {
     public static class GpioPinDriveModeExtensions
     {

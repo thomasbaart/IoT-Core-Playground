@@ -1,4 +1,5 @@
 ﻿using Infra.Components.Platform.Gpio;
+using Infra.Components.Platform.Common;
 
 namespace Infra.Components.OutputDevices
 {
@@ -12,6 +13,20 @@ namespace Infra.Components.OutputDevices
             _controller = controller;
             _pin = _controller.OpenPin(pin);
             _pin.SetDriveMode(GpioPinDriveMode.Output);
+            _pin.Write(GpioPinValue.Low);
+        }
+
+        public DeviceState State
+        {
+            get
+            {
+                return _pin.Read().ToDeviceState();
+            }
+        }
+
+        public void Dispose()
+        {
+            _pin.Dispose();
         }
 
         public void Off()

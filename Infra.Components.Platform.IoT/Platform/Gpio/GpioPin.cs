@@ -1,5 +1,4 @@
 ﻿using Infra.Components.Platform.Gpio;
-using Infra.Components.Platform.IoT.Extensions.Gpio;
 
 namespace Infra.Components.Platform.IoT.Platform.Gpio
 {
@@ -25,6 +24,11 @@ namespace Infra.Components.Platform.IoT.Platform.Gpio
         public void Write(GpioPinValue value)
         {
             _pin.Write(value.ToWindowsGpioPinValue());
+        }
+
+        public void Dispose()
+        {
+            _pin.Dispose();
         }
     }
 }

@@ -107,8 +107,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\Gpio\GpioPinDriveModeExtensions.cs" />
-    <Compile Include="Extensions\Gpio\GpioPinValueExtensions.cs" />
+    <Compile Include="Platform\Gpio\GpioPinDriveModeExtensions.cs" />
+    <Compile Include="Platform\Gpio\GpioPinValueExtensions.cs" />
     <Compile Include="Platform\Gpio\GpioController.cs" />
     <Compile Include="Platform\Gpio\GpioPin.cs" />
     <Compile Include="Platform\Unity\ComponentConfiguration.cs" />

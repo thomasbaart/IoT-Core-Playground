@@ -31,7 +31,24 @@ namespace Apps.Demo.Blink.IoT.Views
             IUnityContainer container = new UnityContainer();
             PlatformConfiguration.ConfigureContainer(container);
             ComponentConfiguration.ConfigureContainer(container);
-            container.Resolve<ILed>(new ParameterOverride("pin", 4));
+            ILed led = container.Resolve<ILed>(new ParameterOverride("pin", 5));
+
+            var timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(500);
+            timer.Tick += (s, e) => {
+                switch (led.State)
+                {
+                    case Infra.Components.Platform.Common.DeviceState.Off:
+                        led.On();
+                        break;
+                    case Infra.Components.Platform.Common.DeviceState.On:
+                        led.Off();
+                        break;
+                    default:
+                        break;
+                }
+            };
+            timer.Start();
         }
     }
 }

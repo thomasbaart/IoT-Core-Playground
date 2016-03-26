@@ -1,6 +1,8 @@
-﻿namespace Infra.Components.Platform.Gpio
+﻿using System;
+
+namespace Infra.Components.Platform.Gpio
 {
-    public interface IGpioPin
+    public interface IGpioPin : IDisposable
     {
         void Write(GpioPinValue value);
         GpioPinValue Read();
